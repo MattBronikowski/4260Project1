@@ -10,14 +10,13 @@ edges = {"Nashville": {"Kentucky":100, }}
 
 class SearchNode:
     def __init__(self, city, parent, edge_label, edge_cost, hcost, path_sum, current_path_cities):
-        self.city = city
-        self.parent = parent
-        self.edge_label = edge_label
-        self.edge_cost = edge_cost
-        self.hcost = hcost
-        self.path_sum = path_sum
-        # self.children = children
-        self.current_path_cities = current_path_cities
+        self.city = city #instance of city class, with its own edges and name
+        self.parent = parent #parent searchNode
+        self.edge_label = edge_label #label of edge from parent city to city
+        self.edge_cost = edge_cost #cost of said edge
+        self.hcost = hcost #heuristic cost (from function, gcost + path_sum)
+        self.path_sum = path_sum #cost of path up until now (not including new edge)
+        self.current_path_cities = current_path_cities #list of cities in path (prevent loops)
 
 def gcost(city1, city2):
     return geodesic(city1.longlat, city2.longlat).miles
@@ -55,7 +54,7 @@ def search(start_city, end_city):
                     edge_cost = edge[1]
                     new_cities = list(node.current_path_cities)
                     new_cities.append(cty.name)
-                    hcost = gcost(node.city, cty) + ctyNode.path_sum
+                    hcost = gcost(node.city, cty) + new_path_sum
                     #make new node, with 
                     ctyNode = SearchNode(cty, node, hcost, edge_label, edge_cost, 
                                          new_path_sum, new_cities)
