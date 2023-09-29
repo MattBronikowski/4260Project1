@@ -19,56 +19,61 @@ edges = {"Nashville": {"Kentucky":100, }}
 #         self.current_path_cities = current_path_cities #list of cities in path (prevent loops)
 
 class SearchNode:
-    def __init__(self, city, parent, gcost = 0, hcost = 0):
-        self.city = city
-        self.parent = parent
-        self.gcost = gcost
-        self.hcost = hcost
+    def __init__(self, city, parents, gcost = 0, hcost = 0):
+        self.city = city #city node
+        self.parents = parents #parent node list
+        self.gcost = gcost #actual distance traveled
+        self.hcost = hcost #straight line distance to goal city
+        self.fcost = gcost + hcost #f = g + h
+        
+    def __lt__(self, other):
+        return (self.f) < (other.f)
 
 
 def aStarSearch(start_city, goal_city):
-    # if start_city.city == goal_city.city:
-    #     output()
 
     frontier = PriorityQueue()
     h = hcost(start_city, goal_city)
     startNode = SearchNode(start_city, None, 0, h)
     frontier.put(h, startNode)
-    closed_set = set()
+    solutions = PriorityQueue()
 
-    while frontier:
+    while frontier and cont == "Y":
         cur_node = frontier.get()
         if cur_node.city == goal_city:
-            path = []
-            while cur_node:
-                 path.insert(0, cur_node)
-                 cur_node = cur_node.parent
-            return path
+            path = cur_node.parents.append(cur_node)
+            cont = output(path)
+            solutions.put(cur_node.gcost, path)
         
-        closed_set.add(cur_node.city)
 
         for neighbor_city in get_neighbors(cur_node.city):
-            if neighbor_city in closed_set:
-                continue
             #Get neighbor g cost
             g = cur_node.gcost + neighbor_edge
+            neighborParents = cur_node.parents.append(cur_node)
             
-            found = False
-            for node in frontier:
-                if node.city == neighbor_city and node.gcost <= g:
-                    found = True
-                    break
+            # found = False
+            # for node in frontier:
+            #     if node.city == neighbor_city and node.gcost <= g:
+            #         found = True
+            #         break
 
-            if not found:
-                neighbor_node = SearchNode(neighbor_city, cur_node.city, g, hcost(neighbor_city, goal_city))
-                frontier.put((neighbor_node.gcost + neighbor_node.hcost, neighbor_node))
-                #aStarSearch(frontier.get(), goal_city)
+            # if not found:
+            neighbor_node = SearchNode(neighbor_city, neighborParents, g, hcost(neighbor_city, goal_city))
+            frontier.put((neighbor_node.fcost, neighbor_node))
         
 
+#Output the best solution on the priority queue and prompt the user to continue
 def output(list):
     path = '/results.txt'
     with open(path, "w") as out:
         out.write(str(list))
+    print("Continue? (Y/N)")
+    input1 = input()
+    if (input1 != "Y" or input1 != "N"){
+        print("Invalid input. Continue? (Y/N)")
+        input1 = input()
+    }
+    return(input1)
 
 def get_neighbors(current):
     return current.edges   
@@ -77,46 +82,39 @@ def get_neighbors(current):
 def hcost(city1, city2):
     return geodesic(city1.longlat, city2.longlat).miles
 
-#build an output text, and then print / write it to output file
-def output(final_search_node, out_file):
-    output_text = ""
-
-def finish(pqueue):
-    return 0 # change this
-
-## old stuff
-def search(start_city, end_city):
-    startNode = SearchNode(start_city, None, 0, [])
-    frontier = PriorityQueue()
-    frontier.put(startNode)
-    visited = []
-    visited_paths = []
-    cont = True
-    while frontier and cont:
-        #pop frontier
-        node = frontier.get()
-        new_path_sum = node.path_sum + node.edge_cost
-        if node.cty.name == end_city.name:
-            output(node)
-            #pause timer
-            cont = (input('Continue searching? Type "y"\n')=="y")
-            #continue timer
-        else:
-            for cty in node.city.edges:
-                #find edge to another city
-                if cty.name not in node.current_path_cities:
-                    edge = node.city.edges[cty]
-                    edge_label = edge[0]
-                    edge_cost = edge[1]
-                    new_cities = list(node.current_path_cities)
-                    new_cities.append(cty.name)
-                    hcost = gcost(node.city, cty) + new_path_sum
-                    #make new node, with 
-                    ctyNode = SearchNode(cty, node, hcost, edge_label, edge_cost, 
-                                         new_path_sum, new_cities)
-                    frontier.put((ctyNode.hcost, ctyNode))
-    #do final output
-    finish()
+# ## old stuff
+# def search(start_city, end_city):
+#     startNode = SearchNode(start_city, None, 0, [])
+#     frontier = PriorityQueue()
+#     frontier.put(startNode)
+#     visited = []
+#     visited_paths = []
+#     cont = True
+#     while frontier and cont:
+#         #pop frontier
+#         node = frontier.get()
+#         new_path_sum = node.path_sum + node.edge_cost
+#         if node.cty.name == end_city.name:
+#             output(node)
+#             #pause timer
+#             cont = (input('Continue searching? Type "y"\n')=="y")
+#             #continue timer
+#         else:
+#             for cty in node.city.edges:
+#                 #find edge to another city
+#                 if cty.name not in node.current_path_cities:
+#                     edge = node.city.edges[cty]
+#                     edge_label = edge[0]
+#                     edge_cost = edge[1]
+#                     new_cities = list(node.current_path_cities)
+#                     new_cities.append(cty.name)
+#                     hcost = gcost(node.city, cty) + new_path_sum
+#                     #make new node, with 
+#                     ctyNode = SearchNode(cty, node, hcost, edge_label, edge_cost, 
+#                                          new_path_sum, new_cities)
+#                     frontier.put((ctyNode.hcost, ctyNode))
+#     #do final output
+#     finish()
 
 
 
@@ -136,82 +134,68 @@ class city:
 # End of Ryan's stuff
 #
 
-    
-
 
 ## read csv into dicts, one of adjacency list and one with city coordinates
-def read(path1, path2, adj, coordinates):
+def read(path1, path2, cities):
     edges_df = pd.read_csv(path1)
-    loc_df = pd.read_csv(path2)
+    cities_df = pd.read_csv(path2)
 
-    for loc in loc_df:
-        coordinates[loc['Location Label']].append([loc['Latitude'], loc['Longitude']])
+    for row in cities_df:
+        cityName = row['Location Label']
+        cityLongLat = row['Longitude', 'Latitude']
+        newCity = city(cityName, {}, cityLongLat)
+        cities.append(newCity)
 
     # dict mapping city to set of lists containing locationB and actualDistance
     adj = defaultdict(set)
     for row in edges_df:
-        city = row['locationA']
-        to = row['locationB']
+        edgeLabel = row['edgeLabel']
+        city1 = row['locationA']
+        city2 = row['locationB']
         gcost = row['actualDistance']
         
-        adj[city].add([to, gcost])
+        adj[city1].add([city2, gcost, edgeLabel])
+        adj[city2].add([city1, gcost, edgeLabel])
 
-
-
-## performs the search, returns path_sum
-def traverse(adj, coordinates, visited, path_sum, cur_loc, goal, p_queue, count, visited_paths):
-    if cur_loc == goal:
-        visited_paths.append([])
-        return [p_queue.qsize(), path_sum, count+1]
-    
-    path = visited_paths[visited_paths.size()-1]
-    visited_paths[visited_paths.size()-1].append(cur_loc)
-    
-    visited.add(cur_loc)
-
-    
-    # builds priority queue
-    cities = adj[cur_loc]
-    for city in cities:
-        destination = city[0]
-        distance = adj[destination][2]
-        if destination not in visited and path not in visited_paths:
-            city1 = (coordinates[cur_loc], coordinates[cur_loc])
-            city2 = (coordinates[destination], coordinates[destination])
-            fcost = hcost(city1, city2)
-            p_queue.put((fcost, [destination, distance]))
-    
-    # iterates through priority queue for next traversal
-    while p_queue:
-        info = p_queue.get()
-        destination = info[0]
-        traverse(adj, coordinates, visited, path_sum + info[1], destination, goal, p_queue)
-    
-    return -1
-
+    ## Need to add from adj to edge list for each city node
 
 
 def main():
     path1 = '\csv files\Road Network - Edges.csv'
     path2 = '\csv files\Road Network - Locations.csv'
+    cities = {}
     adj = {}
-    coordinates = {}
-    read(path1, path2, adj, coordinates)
+    read(path1, path2, cities, adj)
     
-    # set of visited cities
-    visited = {}
-    visited_paths = [[]]
-    p_queue = PriorityQueue()
-    goal = input('Enter your goal')
-    cont = 'yes'
-    while(cont  == 'yes'):
-        city = ""
+    # # set of visited cities
+    # visited = {}
+    # visited_paths = [[]]
+    # p_queue = PriorityQueue()
+    # goal = input('Enter your goal')
+    # cont = 'yes'
+    # while(cont  == 'yes'):
+    #     city = ""
         
-        x = traverse(adj, coordinates, visited, 0, city, goal, p_queue, 0, visited_paths)
+    #     x = traverse(adj, coordinates, visited, 0, city, goal, p_queue, 0, visited_paths)
 
         
-        cont = input('Continue finding another solution?')
+    #     cont = input('Continue finding another solution?')
 
 
 if __name__ == '__main__':
     main()
+
+
+#cities paired with dictionaries
+#sub dictionaries are edge-destination / edge-cost
+#edges = {"Nashville": {"Kentucky":100, }}
+
+# class SearchNode:
+#     def __init__(self, city, parent, edge_label, edge_cost, hcost, path_sum, current_path_cities):
+#         self.city = city #instance of city class, with its own edges and name
+#         self.parent = parent #parent searchNode
+#         self.edge_label = edge_label #label of edge from parent city to city
+#         self.edge_cost = edge_cost #cost of said edge
+#         self.hcost = hcost #heuristic cost (from function, gcost + path_sum)
+#         self.path_sum = path_sum #cost of path up until now (not including new edge)
+#         self.current_path_cities = current_path_cities #list of cities in path (prevent loops)
