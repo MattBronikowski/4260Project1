@@ -1,0 +1,33 @@
+Solution1  NashvilleTN  206.44708068766948
+1  NashvilleTN  KnoxvilleTN  9.002891221292078  Nashville_tofrom_Knoxville  180.0  180.0  189.0028912212921
+2  KnoxvilleTN  GatlinburgTN  0.0  Knoxville_tofrom_Gatlinburg  43.0  223.0  223.0
+GatlinburgTN  223.0
+Solution2  NashvilleTN  206.44708068766948
+1  NashvilleTN  WatertownTN  164.39776403311998  Nashville_tofrom_Watertown  42.0  42.0  206.39776403311998
+2  WatertownTN  KnoxvilleTN  9.002891221292078  Watertown_tofrom_Knoxville  139.0  181.0  190.0028912212921
+3  KnoxvilleTN  GatlinburgTN  0.0  Knoxville_tofrom_Gatlinburg  43.0  224.0  224.0
+GatlinburgTN  224.0
+Solution3  NashvilleTN  206.44708068766948
+1  NashvilleTN  ChattanoogaTN  105.32063800606505  ChattanoogaTN_tofrom_NashvilleTN  134.0  134.0  239.32063800606505
+2  ChattanoogaTN  KnoxvilleTN  9.002891221292078  Knoxville_tofrom_Chattanooga  112.0  246.0  255.0028912212921
+3  KnoxvilleTN  GatlinburgTN  0.0  Knoxville_tofrom_Gatlinburg  43.0  289.0  289.0
+GatlinburgTN  289.0
+a) Frontier size: 65
+b) Min cost path: 223.0	Mean cost path: 245.33333333333334	Max cost path: 289.0
+c) Solution Label — Min cost path found: Solution1
+d) All visited locations:	BowlingGreenKY GatlinburgTN KnoxvilleTN DuluthGA NashvilleTN CookevilleTN ElizabethtownKY KennesawGA McMinnvilleTN ChattanoogaTN GlasgowKY MariettaGA WatertownTN SpartaTN AlbanyKY OakRidgeTN SomersetKY
+e) Instrumented runtime: 0.032781124114990234 seconds
+Solution1  NashvilleTN  206.44708068766948
+1  NashvilleTN  KnoxvilleTN  9.002891221292078  Nashville_tofrom_Knoxville  180.0  180.0  189.0028912212921
+2  KnoxvilleTN  GatlinburgTN  0.0  Knoxville_tofrom_Gatlinburg  43.0  223.0  223.0
+GatlinburgTN  223.0
+Solution2  NashvilleTN  206.44708068766948
+1  NashvilleTN  WatertownTN  164.39776403311998  Nashville_tofrom_Watertown  42.0  42.0  206.39776403311998
+2  WatertownTN  KnoxvilleTN  9.002891221292078  Watertown_tofrom_Knoxville  139.0  181.0  190.0028912212921
+3  KnoxvilleTN  GatlinburgTN  0.0  Knoxville_tofrom_Gatlinburg  43.0  224.0  224.0
+GatlinburgTN  224.0
+a) Frontier size: 34
+b) Min cost path: 223.0	Mean cost path: 223.5	Max cost path: 224.0
+c) Solution Label — Min cost path found: Solution1
+d) All visited locations:	KnoxvilleTN WatertownTN GatlinburgTN SpartaTN NashvilleTN CookevilleTN McMinnvilleTN
+e) Instrumented runtime: 0.015834808349609375 seconds

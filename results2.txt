@@ -1,0 +1,4 @@
+NashvilleTNd) All visited locations: McMinnvilleTNd) All visited locations: ChattanoogaTNd) All visited locations: KnoxvilleTNd) All visited locations: GatlinburgTN
+b) Min cost path: 223.0 Mean cost path: 260.5 Max cost path: 306.0
+c) Min cost path found: 
+GatlinburgTN 306.0
