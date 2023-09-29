@@ -8,17 +8,73 @@ from geopy.distance import geodesic
 #sub dictionaries are edge-destination / edge-cost
 edges = {"Nashville": {"Kentucky":100, }}
 
-class SearchNode:
-    def __init__(self, city, parent, edge_label, edge_cost, hcost, path_sum, current_path_cities):
-        self.city = city #instance of city class, with its own edges and name
-        self.parent = parent #parent searchNode
-        self.edge_label = edge_label #label of edge from parent city to city
-        self.edge_cost = edge_cost #cost of said edge
-        self.hcost = hcost #heuristic cost (from function, gcost + path_sum)
-        self.path_sum = path_sum #cost of path up until now (not including new edge)
-        self.current_path_cities = current_path_cities #list of cities in path (prevent loops)
+# class SearchNode:
+#     def __init__(self, city, parent, edge_label, edge_cost, hcost, path_sum, current_path_cities):
+#         self.city = city #instance of city class, with its own edges and name
+#         self.parent = parent #parent searchNode
+#         self.edge_label = edge_label #label of edge from parent city to city
+#         self.edge_cost = edge_cost #cost of said edge
+#         self.hcost = hcost #heuristic cost (from function, gcost + path_sum)
+#         self.path_sum = path_sum #cost of path up until now (not including new edge)
+#         self.current_path_cities = current_path_cities #list of cities in path (prevent loops)
 
-def gcost(city1, city2):
+class SearchNode:
+    def __init__(self, city, parent, gcost = 0, hcost = 0):
+        self.city = city
+        self.parent = parent
+        self.gcost = gcost
+        self.hcost = hcost
+
+
+def aStarSearch(start_city, goal_city):
+    # if start_city.city == goal_city.city:
+    #     output()
+
+    frontier = PriorityQueue()
+    h = hcost(start_city, goal_city)
+    startNode = SearchNode(start_city, None, 0, h)
+    frontier.put(h, startNode)
+    closed_set = set()
+
+    while frontier:
+        cur_node = frontier.get()
+        if cur_node.city == goal_city:
+            path = []
+            while cur_node:
+                 path.insert(0, cur_node)
+                 cur_node = cur_node.parent
+            return path
+        
+        closed_set.add(cur_node.city)
+
+        for neighbor_city in get_neighbors(cur_node.city):
+            if neighbor_city in closed_set:
+                continue
+            #Get neighbor g cost
+            g = cur_node.gcost + neighbor_edge
+            
+            found = False
+            for node in frontier:
+                if node.city == neighbor_city and node.gcost <= g:
+                    found = True
+                    break
+
+            if not found:
+                neighbor_node = SearchNode(neighbor_city, cur_node.city, g, hcost(neighbor_city, goal_city))
+                frontier.put((neighbor_node.gcost + neighbor_node.hcost, neighbor_node))
+                #aStarSearch(frontier.get(), goal_city)
+        
+
+def output(list):
+    path = '/results.txt'
+    with open(path, "w") as out:
+        out.write(str(list))
+
+def get_neighbors(current):
+    return current.edges   
+    
+
+def hcost(city1, city2):
     return geodesic(city1.longlat, city2.longlat).miles
 
 #build an output text, and then print / write it to output file
@@ -26,10 +82,10 @@ def output(final_search_node, out_file):
     output_text = ""
 
 def finish(pqueue):
-    
+    return 0 # change this
 
+## old stuff
 def search(start_city, end_city):
-    
     startNode = SearchNode(start_city, None, 0, [])
     frontier = PriorityQueue()
     frontier.put(startNode)
@@ -73,10 +129,6 @@ class city:
         self.name = name
         self.edges = edges
         self.longlat = longlat
-
-
-        Nashville:
-        edges = {"Gatlinburg":("Nash to Gat on I-40", 120)}
 
             
 
