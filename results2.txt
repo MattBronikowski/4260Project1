@@ -1,0 +1,78 @@
+Solution1  PhoenixAZ  1828.553692086007
+1  PhoenixAZ  GlobeAZ  1762.5538959860548  GlobeAZ_tofrom_PhoenixAZ_on_I-10W_and_US-60W  87.4  87.4  1849.953895986055
+2  GlobeAZ  SaffordAZ  1722.872350429761  SaffordAZ_tofrom_GlobeAZ_on_US-70W  77.7  165.10000000000002  1887.9723504297608
+3  SaffordAZ  LordsburgNM  1685.8784892689357  LordsburgNM_tofrom_SaffordAZ_on_I-10W_and_US-191N  92.8  257.90000000000003  1943.7784892689358
+4  LordsburgNM  DemingNM  1639.215351118  DemingNM_tofrom_LordsburgNM_on_I-10W  60.4  318.3  1957.515351118
+5  DemingNM  AlamogordoNM  1526.2281090471304  AlamogordoNM_tofrom_DemingNM_on_US-70W  150.0  468.3  1994.5281090471303
+6  AlamogordoNM  RoswellNM  1586.159724431406  RoswellNM_tofrom_AlamogordoNM_on_US-70W  118.0  586.3  2172.459724431406
+7  RoswellNM  CarlsbadNM  1452.7379988950538  CarlsbadNM_tofrom_RoswellNM_on_USHwy285N_and_NM-2N  79.0  665.3  2118.0379988950535
+8  CarlsbadNM  PecosTX  1450.7361324217277  PecosTX_tofrom_CarlsbadNM_on_USHwy285N  86.1  751.4  2202.136132421728
+9  PecosTX  OdessaTX  1379.026445679064  OdessaTX_tofrom_PecosTX_on_I-20W  75.7  827.1  2206.126445679064
+10  OdessaTX  MidlandTX  1358.832148192258  MidlandTX_tofrom_OdessaTX_on_I-20BLW  20.1  847.2  2206.0321481922583
+11  MidlandTX  AbileneTX  1226.1531547520965  AbileneTX_tofrom_MidlandTX_on_US-277S_and_TX-158W  172.0  1019.2  2245.3531547520965
+12  AbileneTX  DallasTX  1070.4772330862581  DallasTX_tofrom_AbileneTX_on_US-180W  191.0  1210.2  2280.677233086258
+13  DallasTX  NewBostonTX  930.2018237567652  Dallas_tofrom_NewBoston_on_I30  156.0  1366.2  2296.401823756765
+14  NewBostonTX  LittleRockAR  779.0921162937785  NewBoston_tofrom_LittleRock_on_I30  164.0  1530.2  2309.2921162937787
+15  LittleRockAR  MemphisTN  657.308152359588  LittleRock_tofrom_Memphis_on_I40  137.0  1667.2  2324.508152359588
+16  MemphisTN  JacksonTN  584.5225284926797  Jackson_tofrom_Memphis_on_I40  88.0  1755.2  2339.72252849268
+17  JacksonTN  NashvilleTN  470.9583353644151  Nashville_tofrom_Jackson_on_I40  129.0  1884.2  2355.158335364415
+18  NashvilleTN  BowlingGreenKY  428.7994221092655  Nashville_tofrom_BowlingGreen_on_I65  66.0  1950.2  2378.9994221092657
+19  BowlingGreenKY  LouisvilleKY  373.48740124951865  Louisville_tofrom_BowlingGreen_on_I65  117.0  2067.2  2440.6874012495186
+20  LouisvilleKY  CincinnatiOH  258.3376001404446  Cincinnati_tofrom_Lousville  100.0  2167.2  2425.5376001404443
+21  CincinnatiOH  ColumbusOH  162.66592992871057  Cincinnati_tofrom_Columbus  107.0  2274.2  2436.8659299287106
+22  ColumbusOH  PittsburghPA  0.0  ColumbusOH_tofrom_PittsburghPA_on_I70E  185.0  2459.2  2459.2
+PittsburghPA  2459.2
+Solution2  PhoenixAZ  1828.553692086007
+1  PhoenixAZ  GlobeAZ  1762.5538959860548  GlobeAZ_tofrom_PhoenixAZ_on_I-10W_and_US-60W  87.4  87.4  1849.953895986055
+2  GlobeAZ  SaffordAZ  1722.872350429761  SaffordAZ_tofrom_GlobeAZ_on_US-70W  77.7  165.10000000000002  1887.9723504297608
+3  SaffordAZ  LordsburgNM  1685.8784892689357  LordsburgNM_tofrom_SaffordAZ_on_I-10W_and_US-191N  92.8  257.90000000000003  1943.7784892689358
+4  LordsburgNM  DemingNM  1639.215351118  DemingNM_tofrom_LordsburgNM_on_I-10W  60.4  318.3  1957.515351118
+5  DemingNM  AlamogordoNM  1526.2281090471304  AlamogordoNM_tofrom_DemingNM_on_US-70W  150.0  468.3  1994.5281090471303
+6  AlamogordoNM  RoswellNM  1586.159724431406  RoswellNM_tofrom_AlamogordoNM_on_US-70W  118.0  586.3  2172.459724431406
+7  RoswellNM  CarlsbadNM  1452.7379988950538  CarlsbadNM_tofrom_RoswellNM_on_USHwy285N_and_NM-2N  79.0  665.3  2118.0379988950535
+8  CarlsbadNM  PecosTX  1450.7361324217277  PecosTX_tofrom_CarlsbadNM_on_USHwy285N  86.1  751.4  2202.136132421728
+9  PecosTX  OdessaTX  1379.026445679064  OdessaTX_tofrom_PecosTX_on_I-20W  75.7  827.1  2206.126445679064
+10  OdessaTX  MidlandTX  1358.832148192258  MidlandTX_tofrom_OdessaTX_on_I-20BLW  20.1  847.2  2206.0321481922583
+11  MidlandTX  AbileneTX  1226.1531547520965  AbileneTX_tofrom_MidlandTX_on_US-277S_and_TX-158W  172.0  1019.2  2245.3531547520965
+12  AbileneTX  DallasTX  1070.4772330862581  DallasTX_tofrom_AbileneTX_on_US-180W  191.0  1210.2  2280.677233086258
+13  DallasTX  NewBostonTX  930.2018237567652  Dallas_tofrom_NewBoston_on_I30  156.0  1366.2  2296.401823756765
+14  NewBostonTX  LittleRockAR  779.0921162937785  NewBoston_tofrom_LittleRock_on_I30  164.0  1530.2  2309.2921162937787
+15  LittleRockAR  MemphisTN  657.308152359588  LittleRock_tofrom_Memphis_on_I40  137.0  1667.2  2324.508152359588
+16  MemphisTN  JacksonTN  584.5225284926797  Jackson_tofrom_Memphis_on_I40  88.0  1755.2  2339.72252849268
+17  JacksonTN  NashvilleTN  470.9583353644151  Nashville_tofrom_Jackson_on_I40  129.0  1884.2  2355.158335364415
+18  NashvilleTN  BowlingGreenKY  428.7994221092655  Nashville_tofrom_BowlingGreen_on_I65  66.0  1950.2  2378.9994221092657
+19  BowlingGreenKY  LouisvilleKY  373.48740124951865  Louisville_tofrom_BowlingGreen_on_I65  117.0  2067.2  2440.6874012495186
+20  LouisvilleKY  LexingtonKY  293.06073110679336  Louisville_tofrom_Lexington  79.0  2146.2  2439.260731106793
+21  LexingtonKY  CincinnatiOH  258.3376001404446  Cincinnati_tofrom_Lexington  83.0  2229.2  2487.5376001404443
+22  CincinnatiOH  ColumbusOH  162.66592992871057  Cincinnati_tofrom_Columbus  107.0  2336.2  2498.8659299287106
+23  ColumbusOH  PittsburghPA  0.0  ColumbusOH_tofrom_PittsburghPA_on_I70E  185.0  2521.2  2521.2
+PittsburghPA  2521.2
+Solution3  PhoenixAZ  1828.553692086007
+1  PhoenixAZ  GlobeAZ  1762.5538959860548  GlobeAZ_tofrom_PhoenixAZ_on_I-10W_and_US-60W  87.4  87.4  1849.953895986055
+2  GlobeAZ  SaffordAZ  1722.872350429761  SaffordAZ_tofrom_GlobeAZ_on_US-70W  77.7  165.10000000000002  1887.9723504297608
+3  SaffordAZ  LordsburgNM  1685.8784892689357  LordsburgNM_tofrom_SaffordAZ_on_I-10W_and_US-191N  92.8  257.90000000000003  1943.7784892689358
+4  LordsburgNM  DemingNM  1639.215351118  DemingNM_tofrom_LordsburgNM_on_I-10W  60.4  318.3  1957.515351118
+5  DemingNM  AlamogordoNM  1526.2281090471304  AlamogordoNM_tofrom_DemingNM_on_US-70W  150.0  468.3  1994.5281090471303
+6  AlamogordoNM  RoswellNM  1586.159724431406  RoswellNM_tofrom_AlamogordoNM_on_US-70W  118.0  586.3  2172.459724431406
+7  RoswellNM  CarlsbadNM  1452.7379988950538  CarlsbadNM_tofrom_RoswellNM_on_USHwy285N_and_NM-2N  79.0  665.3  2118.0379988950535
+8  CarlsbadNM  PecosTX  1450.7361324217277  PecosTX_tofrom_CarlsbadNM_on_USHwy285N  86.1  751.4  2202.136132421728
+9  PecosTX  OdessaTX  1379.026445679064  OdessaTX_tofrom_PecosTX_on_I-20W  75.7  827.1  2206.126445679064
+10  OdessaTX  MidlandTX  1358.832148192258  MidlandTX_tofrom_OdessaTX_on_I-20BLW  20.1  847.2  2206.0321481922583
+11  MidlandTX  AbileneTX  1226.1531547520965  AbileneTX_tofrom_MidlandTX_on_US-277S_and_TX-158W  172.0  1019.2  2245.3531547520965
+12  AbileneTX  DallasTX  1070.4772330862581  DallasTX_tofrom_AbileneTX_on_US-180W  191.0  1210.2  2280.677233086258
+13  DallasTX  NewBostonTX  930.2018237567652  Dallas_tofrom_NewBoston_on_I30  156.0  1366.2  2296.401823756765
+14  NewBostonTX  LittleRockAR  779.0921162937785  NewBoston_tofrom_LittleRock_on_I30  164.0  1530.2  2309.2921162937787
+15  LittleRockAR  MemphisTN  657.308152359588  LittleRock_tofrom_Memphis_on_I40  137.0  1667.2  2324.508152359588
+16  MemphisTN  JacksonTN  584.5225284926797  Jackson_tofrom_Memphis_on_I40  88.0  1755.2  2339.72252849268
+17  JacksonTN  NashvilleTN  470.9583353644151  Nashville_tofrom_Jackson_on_I40  129.0  1884.2  2355.158335364415
+18  NashvilleTN  BowlingGreenKY  428.7994221092655  Nashville_tofrom_BowlingGreen_on_I65  66.0  1950.2  2378.9994221092657
+19  BowlingGreenKY  LouisvilleKY  373.48740124951865  Louisville_tofrom_BowlingGreen_on_I65  117.0  2067.2  2440.6874012495186
+20  LouisvilleKY  IndianapolisIN  345.50837862800716  Indianapolis_tofrom_Louisville  114.0  2181.2  2526.708378628007
+21  IndianapolisIN  ColumbusOH  162.66592992871057  Indianapolis_tofrom_Columbus  176.0  2357.2  2519.8659299287106
+22  ColumbusOH  PittsburghPA  0.0  ColumbusOH_tofrom_PittsburghPA_on_I70E  185.0  2542.2  2542.2
+PittsburghPA  2542.2
+a) Frontier size: 116
+b) Min cost path: 2459.2	Mean cost path: 2507.5333333333333	Max cost path: 2542.2
+c) Solution Label — Min cost path found: Solution1
+d) All visited locations:	KnoxvilleTN GatlinburgTN MurfreesboroTN ElkmontAL AlbanyKY LordsburgNM OdessaTX CarlsbadNM BarstowCA GlobeAZ WatertownTN CincinnatiOH LasVegasNV LexingtonKY RoswellNM ChattanoogaTN PecosTX HendersonvilleTN NewBostonTX NashvilleTN ElizabethtownKY CampbellsvilleKY PittsburghPA JacksonTN ColumbusOH KingmanAZ CookevilleTN DecaturAL McMinnvilleTN GlasgowKY EvansvilleIN HuntingtonWV PhoenixAZ TannerAL AlamogordoNM DemingNM MemphisTN BowlingGreenKY SpartaTN OakRidgeTN SaffordAZ FairmontWV LittleRockAR SomersetKY BooneNC ClevelandOH PigeonForgeTN HuntsvilleAL DallasTX IndianapolisIN AbileneTX LouisvilleKY MidlandTX
+e) Instrumented runtime: 0.06997132301330566 seconds

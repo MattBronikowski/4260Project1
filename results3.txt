@@ -1,0 +1,55 @@
+Solution1  TampaFL  1003.4522401632822
+1  TampaFL  GainesvilleFL  894.3908093406757  Tampa_tofrom_Gainesville_on_I75N  130.0  130.0  1024.3908093406758
+2  GainesvilleFL  TallahasseeFL  810.5358308628398  Gainesville_tofrom_Tallahassee_on_I75N  150.0  280.0  1090.5358308628397
+3  TallahasseeFL  DothanAL  745.842060522464  Dothan_tofrom_Tallahassee_on_I10E  103.0  383.0  1128.842060522464
+4  DothanAL  MontgomeryAL  659.9051157161002  Montgomery_tofrom_Dothan_on_US-231N  108.0  491.0  1150.9051157161002
+5  MontgomeryAL  HuntsvilleAL  496.4422820577616  Huntsville_tofrom_MontgomeryAL_on_I65S  190.0  681.0  1177.4422820577615
+6  HuntsvilleAL  NashvilleTN  396.9919614360032  Nashville_tofrom_Huntsville_on_I65S  115.0  796.0  1192.9919614360033
+7  NashvilleTN  BowlingGreenKY  343.79643302985016  Nashville_tofrom_BowlingGreen_on_I65  66.0  862.0  1205.79643302985
+8  BowlingGreenKY  LouisvilleKY  264.472308019226  Louisville_tofrom_BowlingGreen_on_I65  117.0  979.0  1243.472308019226
+9  LouisvilleKY  IndianapolisIN  157.949440842709  Indianapolis_tofrom_Louisville  114.0  1093.0  1250.949440842709
+10  IndianapolisIN  ChicagoIL  0.0  Chicago_tofrom_Indianapolis  183.0  1276.0  1276.0
+ChicagoIL  1276.0
+Solution2  TampaFL  1003.4522401632822
+1  TampaFL  GainesvilleFL  894.3908093406757  Tampa_tofrom_Gainesville_on_I75N  130.0  130.0  1024.3908093406758
+2  GainesvilleFL  TallahasseeFL  810.5358308628398  Gainesville_tofrom_Tallahassee_on_I75N  150.0  280.0  1090.5358308628397
+3  TallahasseeFL  DothanAL  745.842060522464  Dothan_tofrom_Tallahassee_on_I10E  103.0  383.0  1128.842060522464
+4  DothanAL  MontgomeryAL  659.9051157161002  Montgomery_tofrom_Dothan_on_US-231N  108.0  491.0  1150.9051157161002
+5  MontgomeryAL  BirminghamAL  577.4786210361909  Montgomery_tofrom_Birmingham_on_I65S  90.0  581.0  1158.4786210361908
+6  BirminghamAL  HuntsvilleAL  496.4422820577616  Huntsville_tofrom_Birmingham_on_I65  102.0  683.0  1179.4422820577615
+7  HuntsvilleAL  NashvilleTN  396.9919614360032  Nashville_tofrom_Huntsville_on_I65S  115.0  798.0  1194.9919614360033
+8  NashvilleTN  BowlingGreenKY  343.79643302985016  Nashville_tofrom_BowlingGreen_on_I65  66.0  864.0  1207.79643302985
+9  BowlingGreenKY  LouisvilleKY  264.472308019226  Louisville_tofrom_BowlingGreen_on_I65  117.0  981.0  1245.472308019226
+10  LouisvilleKY  IndianapolisIN  157.949440842709  Indianapolis_tofrom_Louisville  114.0  1095.0  1252.949440842709
+11  IndianapolisIN  ChicagoIL  0.0  Chicago_tofrom_Indianapolis  183.0  1278.0  1278.0
+ChicagoIL  1278.0
+Solution3  TampaFL  1003.4522401632822
+1  TampaFL  GainesvilleFL  894.3908093406757  Tampa_tofrom_Gainesville_on_I75N  130.0  130.0  1024.3908093406758
+2  GainesvilleFL  TallahasseeFL  810.5358308628398  Gainesville_tofrom_Tallahassee_on_I75N  150.0  280.0  1090.5358308628397
+3  TallahasseeFL  MaconGA  661.6438257401376  Tallahassee_tofrom_Macon_on_I75N  185.0  465.0  1126.6438257401376
+4  MaconGA  AtlantaGA  588.4161593241179  Macon_tofrom_Atlanta_on_I75N  83.3  548.3  1136.7161593241178
+5  AtlantaGA  ChattanoogaTN  488.5298864606494  Chattanooga_tofrom_Atlanta_on_I75S  118.0  666.3  1154.8298864606493
+6  ChattanoogaTN  NashvilleTN  396.9919614360032  ChattanoogaTN_tofrom_NashvilleTN  134.0  800.3  1197.291961436003
+7  NashvilleTN  BowlingGreenKY  343.79643302985016  Nashville_tofrom_BowlingGreen_on_I65  66.0  866.3  1210.0964330298502
+8  BowlingGreenKY  LouisvilleKY  264.472308019226  Louisville_tofrom_BowlingGreen_on_I65  117.0  983.3  1247.7723080192259
+9  LouisvilleKY  IndianapolisIN  157.949440842709  Indianapolis_tofrom_Louisville  114.0  1097.3  1255.249440842709
+10  IndianapolisIN  ChicagoIL  0.0  Chicago_tofrom_Indianapolis  183.0  1280.3  1280.3
+ChicagoIL  1280.3
+Solution4  TampaFL  1003.4522401632822
+1  TampaFL  GainesvilleFL  894.3908093406757  Tampa_tofrom_Gainesville_on_I75N  130.0  130.0  1024.3908093406758
+2  GainesvilleFL  TallahasseeFL  810.5358308628398  Gainesville_tofrom_Tallahassee_on_I75N  150.0  280.0  1090.5358308628397
+3  TallahasseeFL  MaconGA  661.6438257401376  Tallahassee_tofrom_Macon_on_I75N  185.0  465.0  1126.6438257401376
+4  MaconGA  AtlantaGA  588.4161593241179  Macon_tofrom_Atlanta_on_I75N  83.3  548.3  1136.7161593241178
+5  AtlantaGA  ChattanoogaTN  488.5298864606494  Chattanooga_tofrom_Atlanta_on_I75S  118.0  666.3  1154.8298864606493
+6  ChattanoogaTN  McMinnvilleTN  439.8618326691417  McMinnville_tofrom_Chattanooga_on_I24E  74.0  740.3  1180.1618326691416
+7  McMinnvilleTN  NashvilleTN  396.9919614360032  McMinnville_tofrom_Nashville_onI_24E  77.0  817.3  1214.291961436003
+8  NashvilleTN  BowlingGreenKY  343.79643302985016  Nashville_tofrom_BowlingGreen_on_I65  66.0  883.3  1227.0964330298502
+9  BowlingGreenKY  LouisvilleKY  264.472308019226  Louisville_tofrom_BowlingGreen_on_I65  117.0  1000.3  1264.7723080192259
+10  LouisvilleKY  IndianapolisIN  157.949440842709  Indianapolis_tofrom_Louisville  114.0  1114.3  1272.249440842709
+11  IndianapolisIN  ChicagoIL  0.0  Chicago_tofrom_Indianapolis  183.0  1297.3  1297.3
+ChicagoIL  1297.3
+a) Frontier size: 257
+b) Min cost path: 1276.0	Mean cost path: 1282.9	Max cost path: 1297.3
+c) Solution Label — Min cost path found: Solution1
+d) All visited locations:	McMinnvilleTN GatlinburgTN IndianapolisIN BirminghamAL MontgomeryAL WatertownTN EvansvilleIN OakRidgeTN GadsenAL HendersonvilleTN ShadyGroveFL BowlingGreenKY ChicagoIL AthensTN FortMyersFL AthensAL PigeonForgeTN CincinnatiOH DothanAL MaconGA CookevilleTN TallahasseeFL NashvilleTN AthensGA ElizabethtownKY LouisvilleKY ChattanoogaTN AlbanyKY GainesvilleFL KennesawGA AshevilleNC KnoxvilleTN PanamaCityFL MetropolisIL MurfreesboroTN AtlantaGA TampaFL LexingtonKY GlasgowKY HuntsvilleAL
+e) Instrumented runtime: 0.11285996437072754 seconds

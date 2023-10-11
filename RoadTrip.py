@@ -9,6 +9,7 @@ from geopy.distance import geodesic
 ## SearchNode
 # A node used to capture information on f, g, and h costs, visited nodes, paths that have been ventured, and the
 #   best solution label found at the current time
+# @param: city, list of parents, list of visited cities, gcost, hcost, solution label
 class SearchNode:
     def __init__(self, city, parents, current_path_cities, gcost = 0, hcost = 0, solution_label = ""):
         self.city = city #city node
@@ -20,22 +21,24 @@ class SearchNode:
         self.solution_label = solution_label
 
 ## City
-# A class to represent each city in the graph        
+# A class to represent each city in the graph
+# @param: name, edges, latitude-longitude pair
 class City:
     name = "Nashville"
     #edges dict, keys are city objects, values are tuple, where tuple[0] = edge_label, tuple[1] = edge_cost
     #to get edge_label:   edges[cityobj][0]
     #to get cost:         edges[cityobj][1]
     edges = {}
-    longlat = (0,0)
+    latlong = (0,0)
 
-    def __init__(self, name, edges, longlat):
+    def __init__(self, name, edges, latlong):
         self.name = name
         self.edges = edges
-        self.longlat = longlat
+        self.latlong = latlong
 
 ## aStarSearch
-# performs the A* search
+# performs the A* anytime search algorithm
+# @param: start_city, goal_city, resultFile
 def aStarSearch(start_city, goal_city, resultFile):
     frontier = PriorityQueue()
     h = hcost(start_city, goal_city)
@@ -78,7 +81,8 @@ def aStarSearch(start_city, goal_city, resultFile):
     final_output(goal_city, solutions, allVisited, len(frontier.queue), elapsed_time, resultFile)
 
 ## intermediate_output
-# outputs the current solution
+# outputs the current solution to screen and result_file
+# @param: solution_label, end_nodes, result_file
 def intermediate_output(solution_label, end_node, result_file):
     node_list = end_node.parents
     node_list.append(end_node)
@@ -110,7 +114,8 @@ def intermediate_output(solution_label, end_node, result_file):
     return(input1)
 
 ## final_output
-# Output the final solution
+# Output the final solution to screen and result_file
+# @param: goal, solutions, allVisited, frontier_length, elapsedTime, resultFile
 def final_output(goal, solutions, allVisited, frontier_length, elapsedTime, resultFile):
     total = 0
     minimum = solutions.queue[0][0]
@@ -135,17 +140,23 @@ def final_output(goal, solutions, allVisited, frontier_length, elapsedTime, resu
 
 ## get_neighbors
 # gets the list of surrounding cities connected by roads
+# @param: current node
+# @returns: list of neighbors
 def get_neighbors(current):
     return current.edges   
     
 ## hcost
 # finds the heuristic for the distance between two cities
+# @param: city1, city2
+# @returns: heuristic distance
 def hcost(city1, city2):
-    return geodesic(city1.longlat, city2.longlat).miles
+    return geodesic(city1.latlong, city2.latlong).miles
 
 
 ## read
 # read csv into dfs and construct graph of cities and roads
+# @param: edges_path, cities_path
+# @returns: list of cities
 def read(edges_path, cities_path):
     edges_df = pd.read_csv(edges_path, skiprows=0)
     cities_df = pd.read_csv(cities_path, skiprows=0)
@@ -154,33 +165,30 @@ def read(edges_path, cities_path):
 
 
     for index, row in cities_df.iterrows():
-        name = row[0]
-        latitude = row[1]
-        longitude = row[2]
+        name = row.iloc[0]
+        latitude = row.iloc[1]
+        longitude = row.iloc[2]
         
-        cty = City(name, {}, (longitude, latitude))
+        cty = City(name, {}, (latitude, longitude))
         city_list[cty.name] = cty
     
     # dict mapping city to set of lists containing locationB and actualDistance
     for index, row in edges_df.iterrows():
-        edge_label = row[0]
+        edge_label = row.iloc[0]
         #get city objects from city_list dict, using locationA label
-        city1 = city_list[row[1]]
-        city2 = city_list[row[2]]
-        edge_cost = row[3]
+        city1 = city_list[row.iloc[1]]
+        city2 = city_list[row.iloc[2]]
+        edge_cost = row.iloc[3]
         
         #put each city in the other city's adjacency list
         city1.edges[city2] = (edge_label, edge_cost)
         city2.edges[city1] = (edge_label, edge_cost)
-
-    # print(city_list["NashvilleTN"].edges)
     return city_list
 
-
+## RoadTrip
+# high-level interface for engaging with A* anytime search algorithm
+# @param: startLoc, goalLoc, LocFile, EdgeFile, resultFile
 def RoadTrip(startLoc, goalLoc, LocFile, EdgeFile, resultFile):
-    # erases file
-    # open(resultFile, "w").close()
-
     city_list = read(EdgeFile, LocFile)
     start_city = city_list[startLoc]
     goal_city = city_list[goalLoc]
@@ -189,12 +197,13 @@ def RoadTrip(startLoc, goalLoc, LocFile, EdgeFile, resultFile):
 
 
 def main():
+    # takes inputs from system call
     startLoc = sys.argv[1]
     goalLoc = sys.argv[2]
     LocFile = sys.argv[3]
     EdgeFile = sys.argv[4]
     resultFile = sys.argv[5]
-    
+
     open(resultFile, "w").close()
     RoadTrip(startLoc, goalLoc, LocFile, EdgeFile, resultFile)
 
